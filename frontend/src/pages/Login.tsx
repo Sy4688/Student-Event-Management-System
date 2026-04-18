@@ -18,7 +18,7 @@ export default function Login() {
   const handleLogin = async () => {
     setError('')
     try {
-      const loginRes = await fetch('http://localhost:8082/api/students/login', {
+      const loginRes = await fetch(`${import.meta.env.VITE_STUDENT_API}/api/students/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form)
@@ -33,7 +33,7 @@ export default function Login() {
       setStudentName(student.studentName)
       setRollNo(student.rollNo)
 
-      const eventsRes = await fetch(`http://localhost:8083/api/events/student/${student.rollNo}`)
+      const eventsRes = await fetch(`${import.meta.env.VITE_EVENTS_API}/api/events/student/${student.rollNo}`)
       const eventsData = await eventsRes.json()
       setEvents(eventsData)
       setLoggedIn(true)
