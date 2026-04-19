@@ -16,7 +16,7 @@ export default function Register() {
   }
 
   const handleSubmit = async () => {
-    const res = await fetch(`${import.meta.env.VITE_STUDENT_API}/api/students/register`, {
+    const res = await fetch(`https://supportive-enchantment-production-36f7.up.railway.app/api/students/register`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(form)
