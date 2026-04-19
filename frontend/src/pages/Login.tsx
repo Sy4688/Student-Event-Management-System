@@ -18,7 +18,7 @@ export default function Login() {
   const handleLogin = async () => {
     setError('')
     try {
-      const loginRes = await fetch(`https://supportive-enchantment-production-36f7.up.railway.app/api/students/login`, {
+      const loginRes = await fetch(`https://humorous-cooperation-production-9adf.up.railway.app/api/students/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form)
